@@ -1,5 +1,6 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 
@@ -7,14 +8,14 @@ import jm.task.core.jdbc.model.User;
 public class Main {
     public static void main(String[] args) {
 
-        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
-//        userDaoJDBC.createUsersTable();
-//        userDaoJDBC.dropUsersTable();
-//        userDaoJDBC.saveUser("Aylana", "Kuular", (byte) 2);
-//        userDaoJDBC.removeUserById(100);
-        userDaoJDBC.cleanUsersTable();
-//        userDaoJDBC.getAllUsers();
-//        System.out.println(userDaoJDBC.getAllUsers());
+        UserDao  userDao= new UserDaoJDBCImpl();
+//        userDao.createUsersTable();
+//        userDao.dropUsersTable();
+//        userDao.saveUser("Aylana", "Kuular", (byte) 2);
+//        userDao.removeUserById(100);
+        userDao.cleanUsersTable();
+//        userDao.getAllUsers();
+//        userDao.out.println(userDaoJDBC.getAllUsers());
 
 
     }
