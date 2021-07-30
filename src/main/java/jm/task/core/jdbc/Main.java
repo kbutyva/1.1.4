@@ -4,20 +4,21 @@ import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.service.UserServiceImpl;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        UserDao  userDao= new UserDaoJDBCImpl();
-        UserDao userDao1 = new UserDaoHibernateImpl();
-//        userDao.createUsersTable();
-//        userDao.dropUsersTable();
-//        userDao.saveUser("Aylana", "Kuular", (byte) 2);
-        userDao1.removeUserById(1);
-//        userDao.cleanUsersTable();
-//        userDao.getAllUsers();
-//        userDao.out.println(userDaoJDBC.getAllUsers());
+        UserServiceImpl userService = new UserServiceImpl();
+
+//        userService.createUsersTable();
+        userService.dropUsersTable();
+//        userService.saveUser("Aylana", "Kuular", (byte) 2);
+ //       userService.removeUserById(1);
+//        userService.cleanUsersTable();
+//        userService.getAllUsers();
+//        System.out.println(userService.getAllUsers());
 
 
     }

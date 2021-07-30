@@ -28,31 +28,26 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void saveUser(String name, String lastName, byte age) {
         User user = new User(name, lastName, age);
-        Transaction transaction = null;
 
-        // auto close session object
-        try (Session session = Util.getSessionFactory().openSession()) {
+        Session session = Util.getSessionFactory().openSession();
 
             // start the transaction
-            transaction = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
 
             // save user object
             session.save(user);
 
             // commit transaction
             transaction.commit();
-        } catch (Exception e) {
-            System.out.println("Hibernate saveUser Error");
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void removeUserById(long id) {
-        Transaction transaction = null;
+        Transaction transaction;
 
         // auto close session object
-        try (Session session = Util.getSessionFactory().openSession()) {
+        Session session = Util.getSessionFactory().openSession();
 
             // start the transaction
             transaction = session.beginTransaction();
@@ -63,18 +58,15 @@ public class UserDaoHibernateImpl implements UserDao {
 
             // commit transaction
             transaction.commit();
-        } catch (Exception e) {
-            System.out.println("Hibernate removeUserById Error");
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public List<User> getAllUsers() {
-        Transaction transaction = null;
-        List<User> users = new ArrayList<>();
+        Transaction transaction;
+        List<User> users;
         // auto close session object
-        try (Session session = Util.getSessionFactory().openSession()) {
+        Session session = Util.getSessionFactory().openSession();
 
             // start the transaction
             transaction = session.beginTransaction();
@@ -85,22 +77,18 @@ public class UserDaoHibernateImpl implements UserDao {
 
             // commit transaction
             transaction.commit();
-        } catch (Exception e) {
-            System.out.println("Hibernate getAllUsers Error");
-            e.printStackTrace();
-        }
+
         return users;
     }
 
     @Override
     public void cleanUsersTable() {
-        Transaction transaction = null;
         List<User> users;
         // auto close session object
-        try (Session session = Util.getSessionFactory().openSession()) {
+        Session session = Util.getSessionFactory().openSession();
 
             // start the transaction
-            transaction = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
 
             // cleanAll object
             Criteria criteria = session.createCriteria(User.class);
@@ -111,10 +99,6 @@ public class UserDaoHibernateImpl implements UserDao {
 
             // commit transaction
             transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        }
+
     }
 }
