@@ -6,7 +6,6 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -53,7 +52,7 @@ public class UserDaoHibernateImpl implements UserDao {
             transaction = session.beginTransaction();
 
             // Id user object
-            User user = (User) session.get(User.class, id);
+            User user = session.get(User.class, id);
             session.delete(user);
 
             // commit transaction
