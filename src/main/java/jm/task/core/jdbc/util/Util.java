@@ -53,7 +53,7 @@ public class Util {
     }
 
     public Connection getConnection() {
-        Connection connection=null;
+        Connection connection = null;
         try {
             connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connected database successfully...");

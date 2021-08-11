@@ -5,6 +5,7 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,14 +52,14 @@ public class UserDaoHibernateImpl implements UserDao {
 
         Session session = Util.getSessionFactory().openSession();
 
-            // start the transaction
+        // start the transaction
         Transaction transaction = session.beginTransaction();
 
-            // save user object
-            session.save(user);
+        // save user object
+        session.save(user);
 
-            // commit transaction
-            transaction.commit();
+        // commit transaction
+        transaction.commit();
 
     }
 
@@ -69,15 +70,15 @@ public class UserDaoHibernateImpl implements UserDao {
         // auto close session object
         Session session = Util.getSessionFactory().openSession();
 
-            // start the transaction
-            transaction = session.beginTransaction();
+        // start the transaction
+        transaction = session.beginTransaction();
 
-            // Id user object
-            User user = session.get(User.class, id);
-            session.delete(user);
+        // Id user object
+        User user = session.get(User.class, id);
+        session.delete(user);
 
-            // commit transaction
-            transaction.commit();
+        // commit transaction
+        transaction.commit();
 
     }
 
@@ -88,15 +89,18 @@ public class UserDaoHibernateImpl implements UserDao {
         // auto close session object
         Session session = Util.getSessionFactory().openSession();
 
-            // start the transaction
-            transaction = session.beginTransaction();
+        // start the transaction
+        transaction = session.beginTransaction();
 
-            // getAll object
-            Criteria criteria = session.createCriteria(User.class);
-            users = criteria.list();
+        // getAll object
+        String sql = "select ID, NAME, lastname, age from USER";
+        NativeQuery nativeQuery = session.createSQLQuery(sql).addEntity(User.class);
 
-            // commit transaction
-            transaction.commit();
+        users = nativeQuery.list();
+
+
+        // commit transaction
+        transaction.commit();
 
         return users;
     }
@@ -107,18 +111,18 @@ public class UserDaoHibernateImpl implements UserDao {
         // auto close session object
         Session session = Util.getSessionFactory().openSession();
 
-            // start the transaction
+        // start the transaction
         Transaction transaction = session.beginTransaction();
 
-            // cleanAll object
-            Criteria criteria = session.createCriteria(User.class);
-            users = criteria.list();
-            for (User user : users) {
-                session.delete(user);
-            }
+        // cleanAll object
+        Criteria criteria = session.createCriteria(User.class);
+        users = criteria.list();
+        for (User user : users) {
+            session.delete(user);
+        }
 
-            // commit transaction
-            transaction.commit();
+        // commit transaction
+        transaction.commit();
 
     }
 }
