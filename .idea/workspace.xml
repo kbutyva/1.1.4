@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="11f347e1-3dc6-4550-b231-3bc5aee26579" name="Default Changelist" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5cee0949-bd1c-4b09-abf3-9aef6931fbd4/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/dao/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/dao/UserDaoHibernateImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jm/task/core/jdbc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jm/task/core/jdbc/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,10 +119,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.removeUserById" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.UserServiceTest.cleanUsersTable" />
         <item itemvalue="JUnit.UserServiceTest.getAllUsers" />
-        <item itemvalue="JUnit.UserServiceTest.removeUserById" />
       </list>
     </recent_temporary>
   </component>
@@ -141,6 +145,7 @@
       <workItem from="1627458413174" duration="2585000" />
       <workItem from="1627628667237" duration="747000" />
       <workItem from="1627629431951" duration="2612000" />
+      <workItem from="1628651972516" duration="808000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1626875723044</created>

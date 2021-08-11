@@ -8,15 +8,15 @@ import jm.task.core.jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    UserDao userDaoJDBC = new UserDaoJDBCImpl();
+
     UserDao userDaoHibernate = new UserDaoHibernateImpl();
 
     public void createUsersTable() {
-        userDaoJDBC.createUsersTable();
+        userDaoHibernate.createUsersTable();
     }
 
     public void dropUsersTable() {
-        userDaoJDBC.dropUsersTable();
+        userDaoHibernate.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {

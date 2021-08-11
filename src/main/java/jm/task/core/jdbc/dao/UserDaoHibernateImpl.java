@@ -6,6 +6,8 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -13,15 +15,34 @@ public class UserDaoHibernateImpl implements UserDao {
 
     }
 
+    Util util = new Util();
 
     @Override
     public void createUsersTable() {
+        String sql = "CREATE TABLE IF NOT EXISTS `user` (`id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(45) NULL, `lastName` VARCHAR(45) NULL, `age` INT NULL, PRIMARY KEY (`id`));";
 
+        try (Statement statement = util.getConnection().createStatement();) {
+
+            statement.execute(sql);
+            System.out.println("createUsersTable Execute SQL successfully");
+        } catch (SQLException throwables) {
+            System.out.println("ERROR createUsersTable");
+            throwables.printStackTrace();
+        }
     }
 
     @Override
     public void dropUsersTable() {
+        String sql = "DROP TABLE user;";
 
+        try (Statement statement = util.getConnection().createStatement();) {
+
+            statement.execute(sql);
+            System.out.println("dropUsersTable Execute SQL successfully");
+        } catch (SQLException throwables) {
+            System.out.println("ERROR dropUsersTable");
+            throwables.printStackTrace();
+        }
     }
 
     @Override
